@@ -168,6 +168,9 @@ devDependencies:
   tom-select:
     specifier: ^2.2.2
     version: 2.2.2
+  typed.js:
+    specifier: ^2.0.16
+    version: 2.0.16
   vinyl-buffer:
     specifier: ^1.0.1
     version: 1.0.1
@@ -9123,6 +9126,10 @@ packages:
       call-bind: 1.0.2
       for-each: 0.3.3
       is-typed-array: 1.1.10
+    dev: true
+
+  /typed.js@2.0.16:
+    resolution: {integrity: sha512-IBB52GlJiTUOnomwdVVf7lWgC6gScn8md+26zTHj5oJWA+4pSuclHE76rbGI2hnyO+NT+QXdIUHbfjAY5nEtcw==}
     dev: true
 
   /typedarray-to-buffer@3.1.5:

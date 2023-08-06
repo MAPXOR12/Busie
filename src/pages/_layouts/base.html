@@ -35,6 +35,13 @@
 		@import url('https://rsms.me/inter/inter.css');
 		:root {
 			--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+			{% if page.brand-colors %}
+			--tblr-primary: {{ page.brand-colors[0] }};
+			--tblr-primary-rgb: {{ page.brand-colors[0] | hex_to_rgb | join: ', ' }};
+			{% if page.brand-colors[1] %}--tblr-primary-darken: {{ page.brand-colors[1] }};{% endif %}
+			{% if page.brand-colors[2] %}--tblr-primary-lt: {{ page.brand-colors[2] }};{% endif %}
+			{% if page.brand-colors[2] %}--tblr-primary-lt-rgb: {{ page.brand-colors[2] | hex_to_rgb | join: ', ' }};{% endif %}
+			{% endif %}
 		}
 		body {
 			font-feature-settings: "cv03", "cv04", "cv11";
@@ -43,7 +50,7 @@
 </head>
 
 {% assign layout-dark = page.layout-dark | default: site.layout-dark %}
-<body {% if layout.body-class or page.body-class %} class="{% if layout.body-class %} {{ layout.body-class }}{% endif %}{% if page.body-class %} {{ page.body-class }}{% endif %}"{% endif %}>
+<body{% if layout.body-class or page.body-class %} class="{% if layout.body-class %} {{ layout.body-class }}{% endif %}{% if page.body-class %} {{ page.body-class }}{% endif %}"{% endif %}>
 <script src="{{ site.base }}/dist/js/demo-theme{% if jekyll.environment != 'development' %}.min{% endif %}.js{% if jekyll.environment != 'development' %}?{{ site.time | date: '%s' }}{% endif %}"></script>
 
 	{{ content }}
